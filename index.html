@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dārin 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; font-family: "Poppins", sans-serif; margin:0; padding:0; }
+body, html { height:100%; }
+body { background: linear-gradient(135deg,#ffd6e8,#e0c3fc); display:flex; justify-content:center; align-items:center; overflow:hidden; }
+
+#landing, #main { width:100%; max-width:400px; text-align:center; padding:20px; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.2); background:white; transition:0.5s; }
+#main { display:none; }
+
+h1 { color:#5a2a82; margin-bottom:15px; text-shadow:0 2px 4px rgba(0,0,0,0.2); }
+p { font-size:18px; color:#444; margin-bottom:20px; }
+button { padding:12px 20px; border:none; border-radius:12px; background:#ff6fae; color:white; cursor:pointer; transition:0.3s; font-size:16px; }
+button:hover { background:#ff4f9a; }
+
+/* Slideshow */
+.slideshow-container { position: relative; width: 100%; max-width: 300px; margin: 20px auto; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+.slide { width: 100%; display: none; border-radius:20px; transition: opacity 1s ease-in-out; }
+.fade { animation-name: fade; animation-duration:2s; }
+@keyframes fade { from {opacity:0.4} to {opacity:1} }
+
+/* Floating hearts */
+.heart { position: absolute; width: 20px; height: 20px; background: red; transform: rotate(45deg); animation: float 5s linear infinite; z-index:1; }
+.heart:before, .heart:after { content: ''; position: absolute; width: 20px; height: 20px; background: red; border-radius:50%; }
+.heart:before { top:-10px; left:0; }
+.heart:after { left:10px; top:0; }
+@keyframes float { 0% { transform: translateY(0) rotate(45deg); opacity:1; } 100% { transform: translateY(-600px) rotate(45deg); opacity:0; } }
+
+/* Card for messages */
+.card { background:white; padding:20px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.15); margin-top:15px; }
+#question { font-size:17px; color:#444; margin-bottom:12px; }
+#options button { margin:5px; }
+#reaction { margin-top:10px; color:#ff4f9a; font-size:14px; }
+</style>
+</head>
+<body>
+
+<!-- Landing Page -->
+<div id="landing">
+  <h1>Hello, I am Suraj, your Menace 🎀</h1>
+  <p>And lots of love from me umhhhh… 😚💋</p>
+  <button onclick="showMain()">Open your surprise 💖</button>
+</div>
+
+<!-- Main Page -->
+<div id="main">
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=13aiWDtFpjfJCFHq1GTvvE8DAbV0z8AZF" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1DX4fsXfdJvIT47SDk0SlwmnmO0Gtalay" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=18EDiYXa_z847rSKyKe6YfeLYjqbLpX2u" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1-EKjmnvPPNmoiv5BckwC12LCOR4VP1t1" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=12kIxPsu6pTpC6rhB1OD8-WSlleR-9_Ix" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1l5wDoIRcdCjrp9T_XXV2O9DYVJFM_dhT" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1nOKBEgW9LlzWd6Ii4WrEfg-X6VbJGH9j" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1MKqB22x5Oh6OSkVgu_awFaZ8ii4AIDwq" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1YWAN_Atcb_Y6KBn-hQnt9qf3gLR2sMTA" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1uIjqCCDBpA7R6Ei0MYIY5Gt9Tu0nhhNa" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=11Zb7ildMDxMPhg2RT_VemQ4caV4KkUqh" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1iDRn6COTvRzT1mlIYNT6zX6mflHwlkFf" alt="Dārin 💖">
+    <img class="slide fade" src="https://drive.google.com/uc?export=view&id=1BjtbPsUbQeK_TxLUhOZZMTYLRog73mT0" alt="Dārin 💖">
+  </div>
+
+  <h1>Hi Dārin 💕</h1>
+  <div class="card" id="card">
+    <p id="question"></p>
+    <div id="options"></div>
+    <p id="reaction"></p>
+  </div>
+</div>
+
+<!-- Background music: Behuli loop via YouTube -->
+<iframe width="0" height="0" 
+src="https://www.youtube.com/embed/BQGzI8aJuyY?autoplay=1&loop=1&playlist=BQGzI8aJuyY" 
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<script>
+// Show main page
+function showMain(){
+  document.getElementById("landing").style.display="none";
+  document.getElementById("main").style.display="block";
+  showSlides();
+  showMessage();
+}
+
+// Slideshow
+let slideIndex = 0;
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i=0;i<slides.length;i++) { slides[i].style.display = "none"; }
+  slideIndex++;
+  if(slideIndex>slides.length){slideIndex=1;}
+  slides[slideIndex-1].style.display="block";
+  setTimeout(showSlides,3000);
+}
+
+// Interactive messages
+const messages = [
+  { text: "I saw you for the first time when you were in the hostel, and the moment I saw you, I fell in love with you 💖", options: ["Aww 😍 I remember!","That’s so sweet 💕","I felt the same 😘"] },
+  { text: "I wish I could give you a soft kiss on your cheek 😘", options: ["Aww 😍","Yes please 💕","Can’t wait! 💖"] },
+  { text: "Every time I think about how close your home is to mine, I just want to see you 💖", options: ["I feel the same 😘","I can’t wait 😍","Thinking of you 💕"] },
+  { text: "Counting the minutes until we meet again 💓", options: ["Same here 💖","I’m excited 😘","Hurry up 😍"] },
+  { text: "Thinking of you makes my day brighter 🌸✨", options: ["You make mine brighter too 💖","Always 😘","Love you 💕"] },
+  { text: "Dārin, your laugh is the cutest thing ever 😍", options: ["Aww thanks 😘","Glad you like it 💖","You make me laugh too 💕"] },
+  { text: "I love imagining little fun moments with you 💖", options: ["Me too 😍","They’re the best 💕","I can’t wait for more 😘"] }
+];
+
+let current = 0;
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const reactionEl = document.getElementById("reaction");
+
+function showMessage() {
+  if(current < messages.length){
+    questionEl.textContent = messages[current].text;
+    optionsEl.innerHTML = '';
+    reactionEl.textContent = '';
+    messages[current].options.forEach(opt=>{
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.onclick = ()=>{ nextMessage(opt); }
+      optionsEl.appendChild(btn);
+    });
+  } else {
+    questionEl.textContent = "Hope you enjoyed this, Dārin 💖!";
+    optionsEl.innerHTML = '';
+  }
+}
+
+function nextMessage(option){
+  reactionEl.textContent = "You chose: " + option + " 💖";
+  current++;
+  setTimeout(showMessage,800);
+}
+</script>
+</body>
+</html>
